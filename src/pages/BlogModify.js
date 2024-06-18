@@ -8,11 +8,11 @@ const BlogModify = () => {
   const id = useParams().id;
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
-
+  const baseUrl = "https://writehubdeploy.onrender.com"; 
   // get blog details
   const getBlogDetail = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/blog/get-blog/${id}`);
+      const { data } = await axios.get(`${baseUrl}/api/v1/blog/get-blog/${id}`);
       if (data?.success) {
         setBlog(data?.blog);
         setInputs({
@@ -42,7 +42,7 @@ const BlogModify = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(`/api/v1/blog/update-blog/${id}`, {
+      const { data } = await axios.put(`${baseUrl}/api/v1/blog/update-blog/${id}`, {
         title: inputs.title,
         description: inputs.description,
         image: inputs.image,

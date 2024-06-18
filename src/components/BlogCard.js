@@ -14,7 +14,8 @@ export default function BlogCard({ title, description, image, username,time, id,
 
   const handleDelete = async () => {
     try {
-      const { data } = await axios.delete(`/api/v1/blog/delete-blog/${id}`);
+      const baseUrl = "https://writehubdeploy.onrender.com";
+      const { data } = await axios.delete(`${baseUrl}/api/v1/blog/delete-blog/${id}`);
       if (data?.success) {
         toast.success("Blog Deleted");
         // You can use navigate or any other way to refresh your blog list after deleting

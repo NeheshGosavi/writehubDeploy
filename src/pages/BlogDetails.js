@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+const baseUrl = "https://writehubdeploy.onrender.com"; 
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -10,7 +11,8 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlogDetails = async () => {
       try {
-        const { data } = await axios.get(`/api/v1/blog/get-blog/${id}`);
+        
+        const { data } = await axios.get(`${baseUrl}/api/v1/blog/get-blog/${id}`);
         if (data?.success) {
           console.log(data);
           setBlog(data.blog);
@@ -23,7 +25,7 @@ const BlogDetails = () => {
 
     const fetchUserDetails = async (userId) => {
       try {
-        const { data } = await axios.get(`/api/v1/user/${userId}`);
+        const { data } = await axios.get(`${baseUrl}/api/v1/user/${userId}`);
         if (data?.success) {
           setUser(data.user);
         }
