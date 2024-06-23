@@ -35,7 +35,7 @@ export default function BlogCard({ title, description, image, username,time, id,
   };
 
   return (
-    <div className="w-full max-w-md mx-auto mt-8 shadow-lg rounded-lg overflow-hidden">
+    <div className="w-full max-w-md mx-auto mt-8 shadow-lg rounded-lg overflow-hidden h-96 transition duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-2xl">
       {isUser && (
         <div className="flex justify-end">
           <button

@@ -38,7 +38,22 @@ const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      console.log(error);
+      let message = "Login failed!";
+      if (error.response) {
+        switch (error.response.status) {
+          case 400:
+          case 401:
+          case 403:
+            message = error.response.data.message;
+            break;
+          case 500:
+            message = "Server error, please try again later.";
+            break;
+          default:
+            message = "Network error, please check your connection.";
+        }
+      }
+      toast.error(message);
     }
   };
 
