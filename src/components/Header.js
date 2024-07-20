@@ -28,7 +28,7 @@ const Header = () => {
   };
 
   // Categories array
-  const allCategories = ["All", "Health", "Lifestyle", "Beauty", "Technology", "Gaming", "Food"];
+  const allCategories = ["All", "Health", "Lifestyle", "Politics", "Technology", "Gaming", "Food"];
 
   // Function to handle category change
   const handleCategoryChange = (e) => {

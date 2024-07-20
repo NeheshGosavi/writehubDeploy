@@ -91,8 +91,8 @@ const CreateBlog = () => {
         >
           <option value="Technology">Technology</option>
           <option value="Health">Health</option>
+          <option value="Politics">Politics</option>
           <option value="Lifestyle">Lifestyle</option>
-          <option value="Beauty">Beauty</option>
           <option value="Gaming">Gaming</option>
           <option value="Food">Food</option>
         </select>
